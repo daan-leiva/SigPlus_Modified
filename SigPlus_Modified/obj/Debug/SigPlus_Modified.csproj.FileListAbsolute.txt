@@ -1,0 +1,8 @@
+c:\users\dleiva\documents\visual studio 2013\Projects\SigPlus_Modified\SigPlus_Modified\bin\Debug\SigPlus_Modified.exe.config
+c:\users\dleiva\documents\visual studio 2013\Projects\SigPlus_Modified\SigPlus_Modified\bin\Debug\SigPlus_Modified.exe
+c:\users\dleiva\documents\visual studio 2013\Projects\SigPlus_Modified\SigPlus_Modified\bin\Debug\SigPlus_Modified.pdb
+c:\users\dleiva\documents\visual studio 2013\Projects\SigPlus_Modified\SigPlus_Modified\obj\Debug\SigPlus_Modified.Form1.resources
+c:\users\dleiva\documents\visual studio 2013\Projects\SigPlus_Modified\SigPlus_Modified\obj\Debug\SigPlus_Modified.Properties.Resources.resources
+c:\users\dleiva\documents\visual studio 2013\Projects\SigPlus_Modified\SigPlus_Modified\obj\Debug\SigPlus_Modified.csproj.GenerateResource.Cache
+c:\users\dleiva\documents\visual studio 2013\Projects\SigPlus_Modified\SigPlus_Modified\obj\Debug\SigPlus_Modified.exe
+c:\users\dleiva\documents\visual studio 2013\Projects\SigPlus_Modified\SigPlus_Modified\obj\Debug\SigPlus_Modified.pdb
