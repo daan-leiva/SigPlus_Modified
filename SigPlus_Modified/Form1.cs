@@ -31,7 +31,6 @@ namespace SigPlus_Modified
    public partial class Form1 : Form
    {
       Bitmap mainScreen, nameScreen, companyNameScreen, usCitizenCheckboxes, check, atiLogo, sigField, peopleCheckboxes;
-      const int MAX_X = 240;
       Topaz.SigPlusNET sigPlusNET1 = new Topaz.SigPlusNET();
       DataRow databaseValues = new DataRow();
       Font textFont = new System.Drawing.Font("Arial", 11.0F, System.Drawing.FontStyle.Regular);
