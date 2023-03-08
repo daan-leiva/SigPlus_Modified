@@ -7,3 +7,15 @@ c:\users\dleiva\documents\visual studio 2013\Projects\SigPlus_Modified\SigPlus_M
 c:\users\dleiva\documents\visual studio 2013\Projects\SigPlus_Modified\SigPlus_Modified\obj\Release\SigPlus_Modified.exe
 c:\users\dleiva\documents\visual studio 2013\Projects\SigPlus_Modified\SigPlus_Modified\obj\Release\SigPlus_Modified.pdb
 C:\Users\dleiva\Documents\Visual Studio 2013\Projects\SigPlus_Modified\SigPlus_Modified\obj\Release\SigPlus_Modified.csprojResolveAssemblyReference.cache
+C:\Users\dleiva\source\repos\SigPlus_Modified\SigPlus_Modified\bin\Release\SigPlus_Modified.exe.config
+C:\Users\dleiva\source\repos\SigPlus_Modified\SigPlus_Modified\bin\Release\SigPlus_Modified.exe
+C:\Users\dleiva\source\repos\SigPlus_Modified\SigPlus_Modified\bin\Release\SigPlus_Modified.pdb
+C:\Users\dleiva\source\repos\SigPlus_Modified\SigPlus_Modified\obj\Release\SigPlus_Modified.csproj.AssemblyReference.cache
+C:\Users\dleiva\source\repos\SigPlus_Modified\SigPlus_Modified\obj\Release\SigPlus_Modified.csproj.SuggestedBindingRedirects.cache
+C:\Users\dleiva\source\repos\SigPlus_Modified\SigPlus_Modified\obj\Release\SigPlus_Modified.Form1.resources
+C:\Users\dleiva\source\repos\SigPlus_Modified\SigPlus_Modified\obj\Release\SigPlus_Modified.Properties.Resources.resources
+C:\Users\dleiva\source\repos\SigPlus_Modified\SigPlus_Modified\obj\Release\SigPlus_Modified.csproj.GenerateResource.cache
+C:\Users\dleiva\source\repos\SigPlus_Modified\SigPlus_Modified\obj\Release\SigPlus_Modified.csproj.CoreCompileInputs.cache
+C:\Users\dleiva\source\repos\SigPlus_Modified\SigPlus_Modified\obj\Release\SigPlus_Modified.csproj.CopyComplete
+C:\Users\dleiva\source\repos\SigPlus_Modified\SigPlus_Modified\obj\Release\SigPlus_Modified.exe
+C:\Users\dleiva\source\repos\SigPlus_Modified\SigPlus_Modified\obj\Release\SigPlus_Modified.pdb
