@@ -148,7 +148,7 @@ namespace SigPlus_Modified
             Image otherPersonImage;
 
             using (OleDbConnection connection = new OleDbConnection("Provider=sqloledb;Data Source=" + this.server + ";Initial Catalog=" + this.database + ";User Id=" + this.username + ";Password=" + this.password + ";"))
-            using (OleDbCommand command = new OleDbCommand("SELECT * FROM ATI_SignIn.dbo.VisitorsTable ORDER BY TimeStamp;", connection))
+            using (OleDbCommand command = new OleDbCommand("SELECT '', TimeStamp , NameByteString , CompanyRepresentedByteStream , CitizenOrResident ,Visitee ,OtherPerson , Chaperone FROM ATI_SignIn.dbo.VisitorsTable ORDER BY TimeStamp;", connection))
             {
                 connection.Open();
                 try
@@ -159,8 +159,9 @@ namespace SigPlus_Modified
 
                     while (reader.Read())
                     {
+                        //MessageBox.Show(string.Format(reader.GetDateTime(0).ToString(), "Testtttt", MessageBoxButtons.OK, MessageBoxIcon.Error));
                         // set the name string back into the sigplus
-                        sigPlusNET1.SetSigString(reader.IsDBNull(2) ? string.Empty : reader.GetString(2));
+                        sigPlusNET1.SetSigString(reader.IsDBNull(1) ? string.Empty : reader.GetString(2));
                         nameImage = sigPlusNET1.GetSigImage();
                         sigPlusNET1.SetSigString(reader.IsDBNull(3) ? string.Empty : reader.GetString(3));
                         companyImage = sigPlusNET1.GetSigImage();
@@ -237,7 +238,7 @@ namespace SigPlus_Modified
             Image otherPersonImage;
 
             using (OleDbConnection connection = new OleDbConnection("Provider=sqloledb;Data Source=" + this.server + ";Initial Catalog=" + this.database + ";User Id=" + this.username + ";Password=" + this.password + ";"))
-            using (OleDbCommand command = new OleDbCommand("SELECT * FROM ATI_SignIn.dbo.VisitorsTable ORDER BY TimeStamp;", connection))
+            using (OleDbCommand command = new OleDbCommand("SELECT '', TimeStamp , NameByteString , CompanyRepresentedByteStream , CitizenOrResident ,Visitee ,OtherPerson , Chaperone FROM ATI_SignIn.dbo.VisitorsTable ORDER BY TimeStamp;", connection))
             {
                 connection.Open();
                 try
@@ -710,18 +711,18 @@ namespace SigPlus_Modified
 
                     // CUT FROM HERE
                     using (OleDbConnection connection = new OleDbConnection("Provider=sqloledb;Data Source=" + this.server + ";Initial Catalog=" + this.database + ";User Id=" + this.username + ";Password=" + this.password + ";"))
-                    using (OleDbCommand command = new OleDbCommand("INSERT INTO ATI_SignIn.dbo.VisitorsTable ([TimeStamp], [NameByteString], [CompanyRepresentedByteStream], [CitizenOrResident], [Visitee], [OtherPerson], [Chaperone]) VALUES (@timeStamp, @nameString, @companyString, @citizen, @visitee, @otherPerson, @chaperone);", connection))
+                    using (OleDbCommand command = new OleDbCommand("INSERT INTO ATI_SignIn.dbo.VisitorsTable ([TimeStamp], [NameByteString], [CompanyRepresentedByteStream], [CitizenOrResident], [Visitee], [Chaperone]) VALUES (\'" + databaseValues.timeStamp.ToString() + "\', \'" + databaseValues.name + "\', \'" + databaseValues.companyName + "\', \'" + databaseValues.citizenOrResident + "\', \'" + databaseValues.visitee + "\', \'" + databaseValues.chaperone + "\');", connection))
                     {
                         connection.Open();
                         try
                         {
-                            command.Parameters.AddWithValue("@timeStamp", databaseValues.timeStamp.ToString());
-                            command.Parameters.AddWithValue("@nameString", databaseValues.name);
-                            command.Parameters.AddWithValue("@companyString", databaseValues.companyName);
-                            command.Parameters.AddWithValue("@citizen", databaseValues.citizenOrResident);
-                            command.Parameters.AddWithValue("@visitee", databaseValues.visitee);
-                            command.Parameters.AddWithValue("@otherPerson", databaseValues.otherPerson);
-                            command.Parameters.AddWithValue("@chaperone", databaseValues.chaperone);
+                            //command.Parameters.AddWithValue("@timeStamp", databaseValues.timeStamp.ToString());
+                            //command.Parameters.AddWithValue("@nameString", databaseValues.name);
+                            //command.Parameters.AddWithValue("@companyString", databaseValues.companyName);
+                            //command.Parameters.AddWithValue("@citizen", databaseValues.citizenOrResident);
+                            //command.Parameters.AddWithValue("@visitee", databaseValues.visitee);
+                            //command.Parameters.AddWithValue("@otherPerson", databaseValues.otherPerson);
+                            //command.Parameters.AddWithValue("@chaperone", databaseValues.chaperone);
 
                             command.ExecuteNonQuery();
                         }
@@ -846,17 +847,17 @@ namespace SigPlus_Modified
 
             // CUT FROM HERE
             using (OleDbConnection connection = new OleDbConnection("Provider=sqloledb;Data Source=" + this.server + ";Initial Catalog=" + this.database + ";User Id=" + this.username + ";Password=" + this.password + ";"))
-            using (OleDbCommand command = new OleDbCommand("INSERT INTO ATI_SignIn.dbo.VisitorsTable ([TimeStamp], [NameByteString], [CompanyRepresentedByteStream], [CitizenOrResident], [Visitee], [Chaperone]) VALUES (@timeStamp, @nameString, @companyString, @citizen, @visitee, @chaperone);", connection))
+            using (OleDbCommand command = new OleDbCommand("INSERT INTO ATI_SignIn.dbo.VisitorsTable ([TimeStamp], [NameByteString], [CompanyRepresentedByteStream], [CitizenOrResident], [Visitee], [Chaperone]) VALUES (\'"+ databaseValues.timeStamp.ToString() + "\', \'"+ databaseValues.name + "\', \'" + databaseValues.companyName + "\', \'"+ databaseValues.citizenOrResident + "\', \'"+databaseValues.visitee+"\', \'"+ databaseValues.chaperone + "\');", connection))
             {
                 connection.Open();
                 try
                 {
-                    command.Parameters.AddWithValue("@timeStamp", databaseValues.timeStamp.ToString());
-                    command.Parameters.AddWithValue("@nameString", databaseValues.name);
-                    command.Parameters.AddWithValue("@companyString", databaseValues.companyName);
-                    command.Parameters.AddWithValue("@citizen", databaseValues.citizenOrResident);
-                    command.Parameters.AddWithValue("@visitee", databaseValues.visitee);
-                    command.Parameters.AddWithValue("@chaperone", databaseValues.chaperone);
+                    //command.Parameters.AddWithValue("@timeStamp", databaseValues.timeStamp.ToString());
+                    //command.Parameters.AddWithValue("@nameString", databaseValues.name);
+                    //command.Parameters.AddWithValue("@companyString", databaseValues.companyName);
+                    //command.Parameters.AddWithValue("@citizen", databaseValues.citizenOrResident);
+                    //command.Parameters.AddWithValue("@visitee", databaseValues.visitee);
+                    //command.Parameters.AddWithValue("@chaperone", databaseValues.chaperone);
 
                     command.ExecuteNonQuery();
                 }
