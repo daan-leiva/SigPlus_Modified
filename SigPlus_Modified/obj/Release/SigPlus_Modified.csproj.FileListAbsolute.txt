@@ -19,3 +19,15 @@ C:\Users\dleiva\source\repos\SigPlus_Modified\SigPlus_Modified\obj\Release\SigPl
 C:\Users\dleiva\source\repos\SigPlus_Modified\SigPlus_Modified\obj\Release\SigPlus_Modified.csproj.CopyComplete
 C:\Users\dleiva\source\repos\SigPlus_Modified\SigPlus_Modified\obj\Release\SigPlus_Modified.exe
 C:\Users\dleiva\source\repos\SigPlus_Modified\SigPlus_Modified\obj\Release\SigPlus_Modified.pdb
+C:\Users\jgresham1747\source\repos\SigPlus_Modified\SigPlus_Modified\bin\Release\SigPlus_Modified.exe.config
+C:\Users\jgresham1747\source\repos\SigPlus_Modified\SigPlus_Modified\bin\Release\SigPlus_Modified.exe
+C:\Users\jgresham1747\source\repos\SigPlus_Modified\SigPlus_Modified\bin\Release\SigPlus_Modified.pdb
+C:\Users\jgresham1747\source\repos\SigPlus_Modified\SigPlus_Modified\obj\Release\SigPlus_Modified.csproj.AssemblyReference.cache
+C:\Users\jgresham1747\source\repos\SigPlus_Modified\SigPlus_Modified\obj\Release\SigPlus_Modified.csproj.SuggestedBindingRedirects.cache
+C:\Users\jgresham1747\source\repos\SigPlus_Modified\SigPlus_Modified\obj\Release\SigPlus_Modified.Form1.resources
+C:\Users\jgresham1747\source\repos\SigPlus_Modified\SigPlus_Modified\obj\Release\SigPlus_Modified.Properties.Resources.resources
+C:\Users\jgresham1747\source\repos\SigPlus_Modified\SigPlus_Modified\obj\Release\SigPlus_Modified.csproj.GenerateResource.cache
+C:\Users\jgresham1747\source\repos\SigPlus_Modified\SigPlus_Modified\obj\Release\SigPlus_Modified.csproj.CoreCompileInputs.cache
+C:\Users\jgresham1747\source\repos\SigPlus_Modified\SigPlus_Modified\obj\Release\SigPlus_Modified.csproj.CopyComplete
+C:\Users\jgresham1747\source\repos\SigPlus_Modified\SigPlus_Modified\obj\Release\SigPlus_Modified.exe
+C:\Users\jgresham1747\source\repos\SigPlus_Modified\SigPlus_Modified\obj\Release\SigPlus_Modified.pdb

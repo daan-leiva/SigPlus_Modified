@@ -38,7 +38,7 @@ namespace SigPlus_Modified
         List<viewRow> bindingSource = new List<viewRow>();
         string fileChosen = String.Empty;
         // OpenFileDialog dialog = new OpenFileDialog();
-        string[] visiteeNames = { "Brittany B.", "Dwight H.", "Evan H.", "Kirk W.", "Kyle S.", "Nara P.", "Robin A.", "Sheldon B.", "Tim B.", "Tom D.", "Tony C.", "Other" };
+        string[] visiteeNames = { "Brittany B.", "Evan H.", "Isabela P.", "John O.", "Kyle S.", "Nara P.", "Robin A.", "Ron M.", "Sheldon B.", "Tim B.", "Tom D.", "Other" };
         string username = "jbread";
         string password = "Cloudy2Day";
         string server = "ATI-SQL";
@@ -148,7 +148,7 @@ namespace SigPlus_Modified
             Image otherPersonImage;
 
             using (OleDbConnection connection = new OleDbConnection("Provider=sqloledb;Data Source=" + this.server + ";Initial Catalog=" + this.database + ";User Id=" + this.username + ";Password=" + this.password + ";"))
-            using (OleDbCommand command = new OleDbCommand("SELECT '', TimeStamp , NameByteString , CompanyRepresentedByteStream , CitizenOrResident ,Visitee ,OtherPerson , Chaperone FROM ATI_SignIn.dbo.VisitorsTable ORDER BY TimeStamp;", connection))
+            using (OleDbCommand command = new OleDbCommand("SELECT '', TimeStamp , NameByteString , CompanyRepresentedByteStream , CitizenOrResident ,Visitee ,OtherPerson , Chaperone FROM ATI_SignIn.dbo.VisitorsTable ORDER BY TimeStamp DESC;", connection))
             {
                 connection.Open();
                 try
@@ -179,8 +179,11 @@ namespace SigPlus_Modified
                     startDateTimePicker.ValueChanged -= this.startDateTimePicker_ValueChanged;
                     if (bindingSource.Count != 0)
                     {
-                        startDateTimePicker.MaxDate = bindingSource.ElementAt(bindingSource.Count - 1).timeStamp;
-                        startDateTimePicker.MinDate = bindingSource.ElementAt(0).timeStamp;
+                        //startDateTimePicker.MaxDate = bindingSource.ElementAt(bindingSource.Count - 1).timeStamp;
+                        //startDateTimePicker.MinDate = bindingSource.ElementAt(0).timeStamp;
+                        startDateTimePicker.MinDate = bindingSource.ElementAt(bindingSource.Count - 1).timeStamp;
+                        startDateTimePicker.MaxDate = bindingSource.ElementAt(0).timeStamp;
+
                     }
                     else
                     {
@@ -193,8 +196,10 @@ namespace SigPlus_Modified
                     endDateTimePicker.ValueChanged -= this.endDateTimePicker_ValueChanged;
                     if (bindingSource.Count != 0)
                     {
-                        endDateTimePicker.MaxDate = bindingSource.ElementAt(bindingSource.Count - 1).timeStamp;
-                        endDateTimePicker.MinDate = bindingSource.ElementAt(0).timeStamp;
+                        //endDateTimePicker.MaxDate = bindingSource.ElementAt(bindingSource.Count - 1).timeStamp;
+                        //endDateTimePicker.MinDate = bindingSource.ElementAt(0).timeStamp;
+                        endDateTimePicker.MinDate = bindingSource.ElementAt(bindingSource.Count - 1).timeStamp;
+                        endDateTimePicker.MaxDate = bindingSource.ElementAt(0).timeStamp;
                     }
                     else
                     {
@@ -238,7 +243,7 @@ namespace SigPlus_Modified
             Image otherPersonImage;
 
             using (OleDbConnection connection = new OleDbConnection("Provider=sqloledb;Data Source=" + this.server + ";Initial Catalog=" + this.database + ";User Id=" + this.username + ";Password=" + this.password + ";"))
-            using (OleDbCommand command = new OleDbCommand("SELECT '', TimeStamp , NameByteString , CompanyRepresentedByteStream , CitizenOrResident ,Visitee ,OtherPerson , Chaperone FROM ATI_SignIn.dbo.VisitorsTable ORDER BY TimeStamp;", connection))
+            using (OleDbCommand command = new OleDbCommand("SELECT '', TimeStamp , NameByteString , CompanyRepresentedByteStream , CitizenOrResident ,Visitee ,OtherPerson , Chaperone FROM ATI_SignIn.dbo.VisitorsTable ORDER BY TimeStamp DESC;", connection))
             {
                 connection.Open();
                 try
@@ -653,7 +658,7 @@ namespace SigPlus_Modified
                 sigPlusNET1.ClearSigWindow(1); //clear hot spot buffer
                 sigPlusNET1.ClearTablet(); //Clear SigPlus
                 sigPlusNET1.LCDRefresh(0, 0, 0, 240, 128);
-                sigPlusNET1.LCDWriteString(0, 2, 4, 10, textFont, "Enter Full Name:");
+                sigPlusNET1.LCDWriteString(0, 2, 4, 10, textFont, "Who Are You Visiting?:");
                 sigPlusNET1.LCDSendGraphic(0, 2, 0, 51, sigField);
                 sigPlusNET1.KeyPadClearHotSpotList();
 
@@ -711,7 +716,8 @@ namespace SigPlus_Modified
 
                     // CUT FROM HERE
                     using (OleDbConnection connection = new OleDbConnection("Provider=sqloledb;Data Source=" + this.server + ";Initial Catalog=" + this.database + ";User Id=" + this.username + ";Password=" + this.password + ";"))
-                    using (OleDbCommand command = new OleDbCommand("INSERT INTO ATI_SignIn.dbo.VisitorsTable ([TimeStamp], [NameByteString], [CompanyRepresentedByteStream], [CitizenOrResident], [Visitee], [Chaperone]) VALUES (\'" + databaseValues.timeStamp.ToString() + "\', \'" + databaseValues.name + "\', \'" + databaseValues.companyName + "\', \'" + databaseValues.citizenOrResident + "\', \'" + databaseValues.visitee + "\', \'" + databaseValues.chaperone + "\');", connection))
+                    //using (OleDbCommand command = new OleDbCommand("INSERT INTO ATI_SignIn.dbo.VisitorsTable ([TimeStamp], [NameByteString], [CompanyRepresentedByteStream], [CitizenOrResident], [Visitee], [Chaperone]) VALUES (\'" + databaseValues.timeStamp.ToString() + "\', \'" + databaseValues.name + "\', \'" + databaseValues.companyName + "\', \'" + databaseValues.citizenOrResident + "\', \'" + databaseValues.visitee + "\', \'" + databaseValues.chaperone + "\');", connection))
+                    using (OleDbCommand command = new OleDbCommand("INSERT INTO ATI_SignIn.dbo.VisitorsTable ([TimeStamp], [NameByteString], [CompanyRepresentedByteStream], [CitizenOrResident], [Visitee], [OtherPerson], [Chaperone]) VALUES (\'" + databaseValues.timeStamp.ToString() + "\', \'" + databaseValues.name + "\', \'" + databaseValues.companyName + "\', \'" + databaseValues.citizenOrResident + "\', \'" + databaseValues.visitee + "\', \'" + databaseValues.otherPerson + "\', \'" + databaseValues.chaperone + "\');", connection))
                     {
                         connection.Open();
                         try
@@ -741,6 +747,7 @@ namespace SigPlus_Modified
                         endDateTimePicker.ValueChanged += this.endDateTimePicker_ValueChanged;
 
                         connection.Close();
+                        databaseValues.otherPerson = null;
                     }
 
 
@@ -847,7 +854,8 @@ namespace SigPlus_Modified
 
             // CUT FROM HERE
             using (OleDbConnection connection = new OleDbConnection("Provider=sqloledb;Data Source=" + this.server + ";Initial Catalog=" + this.database + ";User Id=" + this.username + ";Password=" + this.password + ";"))
-            using (OleDbCommand command = new OleDbCommand("INSERT INTO ATI_SignIn.dbo.VisitorsTable ([TimeStamp], [NameByteString], [CompanyRepresentedByteStream], [CitizenOrResident], [Visitee], [Chaperone]) VALUES (\'"+ databaseValues.timeStamp.ToString() + "\', \'"+ databaseValues.name + "\', \'" + databaseValues.companyName + "\', \'"+ databaseValues.citizenOrResident + "\', \'"+databaseValues.visitee+"\', \'"+ databaseValues.chaperone + "\');", connection))
+            //using (OleDbCommand command = new OleDbCommand("INSERT INTO ATI_SignIn.dbo.VisitorsTable ([TimeStamp], [NameByteString], [CompanyRepresentedByteStream], [CitizenOrResident], [Visitee], [Chaperone]) VALUES (\'"+ databaseValues.timeStamp.ToString() + "\', \'"+ databaseValues.name + "\', \'" + databaseValues.companyName + "\', \'"+ databaseValues.citizenOrResident + "\', \'"+databaseValues.visitee+"\', \'"+ databaseValues.chaperone + "\');", connection))
+            using (OleDbCommand command = new OleDbCommand("INSERT INTO ATI_SignIn.dbo.VisitorsTable ([TimeStamp], [NameByteString], [CompanyRepresentedByteStream], [CitizenOrResident], [Visitee], [OtherPerson], [Chaperone]) VALUES (\'" + databaseValues.timeStamp.ToString() + "\', \'" + databaseValues.name + "\', \'" + databaseValues.companyName + "\', \'" + databaseValues.citizenOrResident + "\', \'" + databaseValues.visitee + "\', \'" + databaseValues.otherPerson + "\', \'" + databaseValues.chaperone + "\');", connection))
             {
                 connection.Open();
                 try
